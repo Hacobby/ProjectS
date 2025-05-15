@@ -12,17 +12,23 @@ public class Main extends ApplicationAdapter {
     private SpriteBatch batch;
     private Texture image;
 
+    private float screenWidth;
+    private float screenHeight;
+
     @Override
     public void create() {
         batch = new SpriteBatch();
         image = new Texture("libgdx.png");
+
+        screenWidth = Gdx.graphics.getWidth();
+        screenHeight = Gdx.graphics.getHeight();
     }
 
     @Override
     public void render() {
         ScreenUtils.clear(0.15f, 0.15f, 0.2f, 1f);
         batch.begin();
-        batch.draw(image, 140, 210);
+        batch.draw(image, screenWidth/2, screenHeight/2);
         batch.end();
     }
 
